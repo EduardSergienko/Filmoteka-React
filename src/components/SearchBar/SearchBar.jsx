@@ -2,6 +2,9 @@ import { useState } from 'react';
 import Notiflix from 'notiflix';
 import PropTypes from 'prop-types';
 import styles from './SearchBar.module.scss';
+import Input from '@mui/material/Input';
+import SearchIcon from '@mui/icons-material/Search';
+import Button from '@mui/material/Button';
 export function SearchBar({ onSubmit, value }) {
   const [serachBarQuery, setSerachBarQuery] = useState(value);
 
@@ -21,8 +24,31 @@ export function SearchBar({ onSubmit, value }) {
   };
   return (
     <form className={styles.searchbar} onSubmit={handleFormSubmit}>
-      <input value={serachBarQuery} type="text" onChange={handleInputType} />
-      <button type="submit">Search</button>
+      <Input
+        placeholder="Searching movie..."
+        value={serachBarQuery}
+        type="text"
+        onChange={handleInputType}
+        sx={{
+          width: 300,
+        }}
+      />
+      <Button
+        variant="text"
+        endIcon={
+          <SearchIcon
+            sx={{
+              fill: 'rgb(214, 49, 49)',
+            }}
+          />
+        }
+        type="submit"
+        sx={{
+          '& 	.MuiButton-endIcon': {
+            margin: 0,
+          },
+        }}
+      ></Button>
     </form>
   );
 }
