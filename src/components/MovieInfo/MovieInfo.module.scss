@@ -1,0 +1,19 @@
+.movieInfoWrap {
+  display: flex;
+  padding: 20px;
+}
+
+.movieInfoPoster {
+  display: block;
+  width: 250px;
+  height: 350px;
+}
+.overview {
+  font-weight: bold;
+}
+.overviewContent {
+  width: 1000px;
+}
+.posterWrap {
+  margin-right: 25px;
+}
