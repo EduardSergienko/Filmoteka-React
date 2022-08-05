@@ -2,6 +2,8 @@ import { fetchTrandingFilms } from 'services/MovieApi';
 import { useEffect, useState } from 'react';
 import { MovieItem } from 'components/MovieItem/MovieItem';
 import { MovieList } from 'components/MovieList/MovieList';
+import Contaimer from 'components/Container/Container';
+import { HomeTitle } from 'components/HomeTitle/HomeTitle';
 
 export default function Home() {
   const [moviesData, setMoviesData] = useState([]);
@@ -10,20 +12,35 @@ export default function Home() {
     async function showTrandingFilms() {
       try {
         const { data } = await fetchTrandingFilms();
-
+        console.log(data.results);
         setMoviesData(data.results);
       } catch (error) {}
     }
     showTrandingFilms();
   }, []);
+  function cutFilmTitle(title) {
+    if (title.length > 30) {
+      return title.slice(0, 30) + '...';
+    } else {
+      return title;
+    }
+  }
   return (
-    <MovieList>
-      <>
-        <h2>Trendind today</h2>
-      </>
-      {moviesData.map(({ id, title }) => {
-        return <MovieItem key={id} filmTitle={title} movieId={id} />;
-      })}
-    </MovieList>
+    <Contaimer>
+      <HomeTitle />
+      <MovieList>
+        {moviesData.map(({ id, title, poster_path, release_date }) => {
+          return (
+            <MovieItem
+              key={id}
+              filmTitle={cutFilmTitle(title)}
+              movieId={id}
+              moviePoster={poster_path}
+              movieDate={release_date.slice(0, 4)}
+            />
+          );
+        })}
+      </MovieList>
+    </Contaimer>
   );
 }

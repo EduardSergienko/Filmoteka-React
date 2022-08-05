@@ -1,23 +1,26 @@
 import { Link, useLocation } from 'react-router-dom';
 import styles from './MovieItem.module.scss';
 import PropTypes from 'prop-types';
-export const MovieItem = ({ filmTitle, movieId }) => {
+export const MovieItem = ({ filmTitle, movieId, moviePoster, movieDate }) => {
   const location = useLocation();
+  let src = `https://image.tmdb.org/t/p/original/${moviePoster}`;
 
   return (
-    <li className={styles.item}>
-      <Link
-        className={styles.itemLink}
-        to={`/movies/${movieId}`}
-        state={{ from: location }}
-      >
-        {filmTitle}
-      </Link>
-    </li>
+    <Link
+      className={styles.itemLink}
+      to={`/movies/${movieId}`}
+      state={{ from: location }}
+    >
+      <li className={styles.item}>
+        <img className={styles.poster} src={src} alt="" />
+        <p className={styles.title}>{filmTitle}</p>
+        <p className={styles.release}>Year | {movieDate}</p>
+      </li>
+    </Link>
   );
 };
 
 MovieItem.propTypes = {
-  filmTitle: PropTypes.string.isRequired,
+  // filmTitle: PropTypes.string.isRequired,
   movieId: PropTypes.number.isRequired,
 };

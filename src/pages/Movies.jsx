@@ -37,13 +37,26 @@ export default function Movies() {
   const formData = data => {
     setSearchParams({ query: data.toLowerCase().trim() });
   };
-
+  function cutFilmTitle(title) {
+    if (title.length > 30) {
+      return title.slice(0, 30) + '...';
+    } else {
+      return title;
+    }
+  }
   return (
     <>
       <SearchBar value={query} onSubmit={formData} />
       <MovieList>
-        {moviesData.map(({ id, title }) => {
-          return <MovieItem key={id} filmTitle={title} movieId={id} />;
+        {moviesData.map(({ id, title, poster_path }) => {
+          return (
+            <MovieItem
+              key={id}
+              filmTitle={cutFilmTitle(title)}
+              movieId={id}
+              moviePoster={poster_path}
+            />
+          );
         })}
       </MovieList>
     </>
