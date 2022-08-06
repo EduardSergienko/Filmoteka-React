@@ -1,4 +1,4 @@
-import { getMovieDetails } from 'services/MovieApi';
+import { getMovieDetails, getMovieTrailer } from 'services/MovieApi';
 import { useEffect, useState, Suspense } from 'react';
 import { MovieInfo } from 'components/MovieInfo/MovieInfo';
 import { useParams, Outlet, useLocation } from 'react-router-dom';
@@ -6,6 +6,7 @@ import { AdditionalInfo } from 'components/AdditionalInfo/AdditionalInfo';
 import { GoBackLink } from 'components/GoBackLink/GoBackLink';
 export default function MovieDetails() {
   const [movieDetails, setmMvieDetails] = useState(null);
+  const [movietrailer, setmMvieTrailer] = useState(null);
   const [genres, setGenres] = useState([]);
   const [poster, setPoster] = useState('');
   const { movieId } = useParams();
@@ -17,7 +18,9 @@ export default function MovieDetails() {
     async function showFilmDetails() {
       try {
         const { data } = await getMovieDetails(movieId);
+        const resolve = await getMovieTrailer(movieId);
 
+        setmMvieTrailer(resolve.data.results[0].key);
         setmMvieDetails(data);
         setPoster(data.poster_path);
         setGenres(data.genres);
@@ -41,6 +44,7 @@ export default function MovieDetails() {
             movieRait={movieDetails.vote_average}
             movieGenres={movieGenres.join(', ')}
             movieDate={movieDetails.release_date.slice(0, 4)}
+            movieTrailer={movietrailer}
           />
         </>
       )}

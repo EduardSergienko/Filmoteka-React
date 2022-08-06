@@ -8,8 +8,10 @@ export function MovieInfo({
   moviePoster,
   movieGenres,
   movieDate,
+  movieTrailer,
 }) {
   const movScore = Math.round(movieRait * 10);
+  let videoSrc = `https://www.youtube.com/embed/${movieTrailer}`;
   let src = `https://image.tmdb.org/t/p/w500${moviePoster}`;
   if (moviePoster === null) {
     src =
@@ -29,6 +31,15 @@ export function MovieInfo({
         <p className={styles.overviewContent}>{movieOverview}</p>
         <p className={styles.overview}>Genres</p>
         <p>{movieGenres}</p>
+      </div>
+      <div>
+        <iframe
+          width="560"
+          height="315"
+          title="This is a unique title"
+          src={videoSrc}
+          frameBorder="0"
+        ></iframe>
       </div>
     </div>
   );

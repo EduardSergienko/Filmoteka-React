@@ -12,7 +12,7 @@ export default function Home() {
     async function showTrandingFilms() {
       try {
         const { data } = await fetchTrandingFilms();
-        console.log(data.results);
+
         setMoviesData(data.results);
       } catch (error) {}
     }
