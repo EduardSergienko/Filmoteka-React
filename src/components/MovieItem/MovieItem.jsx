@@ -1,7 +1,13 @@
 import { Link, useLocation } from 'react-router-dom';
 import styles from './MovieItem.module.scss';
 import PropTypes from 'prop-types';
-export const MovieItem = ({ filmTitle, movieId, moviePoster, movieDate }) => {
+export const MovieItem = ({
+  filmTitle,
+  movieId,
+  moviePoster,
+  movieDate,
+  genres,
+}) => {
   const location = useLocation();
   let src = `https://image.tmdb.org/t/p/original/${moviePoster}`;
 
@@ -14,12 +20,13 @@ export const MovieItem = ({ filmTitle, movieId, moviePoster, movieDate }) => {
       <li className={styles.item}>
         <img className={styles.poster} src={src} alt="" />
         <p className={styles.title}>{filmTitle}</p>
-        <p className={styles.release}>Year | {movieDate}</p>
+        <p className={styles.release}>
+          {movieDate} | {genres}
+        </p>
       </li>
     </Link>
   );
 };
-
 MovieItem.propTypes = {
   // filmTitle: PropTypes.string.isRequired,
   movieId: PropTypes.number.isRequired,
