@@ -28,6 +28,9 @@ export const MovieItem = ({
   );
 };
 MovieItem.propTypes = {
-  // filmTitle: PropTypes.string.isRequired,
+  filmTitle: PropTypes.string.isRequired,
   movieId: PropTypes.number.isRequired,
+  moviePoster: PropTypes.string.isRequired,
+  movieDate: PropTypes.string.isRequired,
+  genres: PropTypes.string.isRequired,
 };

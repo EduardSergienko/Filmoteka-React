@@ -52,4 +52,5 @@ MovieInfo.propTypes = {
   moviePoster: PropTypes.string.isRequired,
   movieGenres: PropTypes.string.isRequired,
   movieDate: PropTypes.string.isRequired,
+  movieTrailer: PropTypes.string.isRequired,
 };
