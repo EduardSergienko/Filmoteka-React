@@ -9,7 +9,9 @@ export function MovieInfo({
   movieGenres,
   movieDate,
   movieTrailer,
+  country,
 }) {
+  const movieCountry = country.map(item => item.name);
   const movScore = Math.round(movieRait * 10);
   let videoSrc = `https://www.youtube.com/embed/${movieTrailer}`;
   let src = `https://image.tmdb.org/t/p/w500${moviePoster}`;
@@ -22,15 +24,26 @@ export function MovieInfo({
       <div className={styles.posterWrap}>
         <img className={styles.movieInfoPoster} src={src} alt="" />
       </div>
-      <div>
-        <h2>
-          {movieTitle} ({movieDate})
-        </h2>
-        <p className={styles.overview}>User Score: {movScore}%</p>
+      <div className={styles.movieAbout}>
+        <h2>{movieTitle}</h2>
+        <p className={styles.overview}>
+          Country:{'  '}
+          <span className={styles.additionalOverview}>{movieCountry}</span>
+        </p>
+        <p className={styles.overview}>
+          Year: <span className={styles.additionalOverview}>{movieDate}</span>
+        </p>
+        <p className={styles.overview}>
+          User Score:{'  '}
+          <span className={styles.additionalOverview}>{movScore}%</span>
+        </p>
+        <p className={styles.overview}>
+          Genres:{'  '}
+          <span className={styles.additionalOverview}>{movieGenres}</span>
+        </p>
+
         <p className={styles.overview}>Overview</p>
         <p className={styles.overviewContent}>{movieOverview}</p>
-        <p className={styles.overview}>Genres</p>
-        <p>{movieGenres}</p>
       </div>
       <div>
         <iframe

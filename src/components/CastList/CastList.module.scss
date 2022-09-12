@@ -1,5 +1,10 @@
-.profileImg {
-  width: 100px;
-  height: 120px;
-  object-fit: contain;
+.castsWrap {
+  padding-top: 25px;
+  width: 1500px;
+  margin: 0 auto;
+}
+.castsList {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: -10px;
 }

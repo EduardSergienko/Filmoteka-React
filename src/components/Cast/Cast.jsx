@@ -1,8 +1,8 @@
 import { getCastDetails } from 'services/MovieApi';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { CastItem } from 'components/CastItem/CastItem';
 import { CastList } from 'components/CastList/CastList';
-
 export default function Cast() {
   const { movieId } = useParams();
   const [castData, setCastData] = useState([]);
@@ -27,12 +27,12 @@ export default function Cast() {
   return (
     <>
       {dataId !== undefined && (
-        <ul>
+        <CastList>
           {castData
             .slice(0, 14)
             .map(({ id, name, character, profile_path }) => {
               return (
-                <CastList
+                <CastItem
                   key={id}
                   actorName={name}
                   character={character}
@@ -40,7 +40,7 @@ export default function Cast() {
                 />
               );
             })}
-        </ul>
+        </CastList>
       )}
     </>
   );

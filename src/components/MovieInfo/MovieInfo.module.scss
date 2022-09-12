@@ -8,12 +8,24 @@
   width: 250px;
   height: 350px;
 }
+.movieAbout {
+  margin-right: 400px;
+}
 .overview {
+  display: block;
   font-weight: bold;
+  margin-bottom: 10px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+.additionalOverview {
+  font-weight: 500;
 }
 .overviewContent {
-  width: 1000px;
+  width: 550px;
+  font-weight: 500;
 }
 .posterWrap {
-  margin-right: 25px;
+  margin-right: 80px;
 }

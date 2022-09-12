@@ -1,0 +1,12 @@
+.profile {
+  display: flex;
+  align-items: flex-start;
+  width: 500px;
+  margin-bottom: 10px;
+}
+
+.profileImg {
+  width: 100px;
+  height: 120px;
+  object-fit: contain;
+}

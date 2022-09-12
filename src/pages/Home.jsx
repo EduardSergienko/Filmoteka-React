@@ -45,6 +45,7 @@ export default function Home() {
   function handleShowMore() {
     setPage(page + 1);
   }
+
   return (
     <Contaimer>
       <HomeTitle />
