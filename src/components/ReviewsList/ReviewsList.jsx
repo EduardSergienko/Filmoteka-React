@@ -1,14 +1,7 @@
-import PropTypes from 'prop-types';
-
-export function ReviewsList({ authorName, rewContent }) {
+export function ReviewsList({ children }) {
   return (
-    <li>
-      <h2>Author:{authorName} </h2>
-      <p>{rewContent}</p>
-    </li>
+    <div>
+      <ul>{children}</ul>
+    </div>
   );
 }
-ReviewsList.propTypes = {
-  authorName: PropTypes.string.isRequired,
-  rewContent: PropTypes.string.isRequired,
-};

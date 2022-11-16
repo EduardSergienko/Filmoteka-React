@@ -1,12 +1,22 @@
 .profile {
   display: flex;
   align-items: flex-start;
-  width: 500px;
-  margin-bottom: 10px;
+  width: 400px;
+  margin: 10px;
+  box-shadow: rgb(0 0 0 / 5%) 0px 6px 24px 0px, rgb(0 0 0 / 8%) 0px 0px 0px 1px;
+  padding: 5px;
+  align-items: center;
 }
 
 .profileImg {
   width: 100px;
   height: 120px;
   object-fit: contain;
+}
+
+.profileTitle {
+  font-weight: 600;
+}
+.profileText {
+  font-weight: 500;
 }

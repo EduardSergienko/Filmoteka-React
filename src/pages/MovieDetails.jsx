@@ -19,7 +19,6 @@ export default function MovieDetails() {
       try {
         const { data } = await getMovieDetails(movieId);
         const resolve = await getMovieTrailer(movieId);
-        console.log(data);
         setmMvieTrailer(resolve.data.results[0].key);
         setmMvieDetails(data);
         setPoster(data.poster_path);

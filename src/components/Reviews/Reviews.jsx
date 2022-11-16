@@ -1,8 +1,8 @@
 import { getMovieReviews } from 'services/MovieApi';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { ReviewsItem } from 'components/ReviewsItem/ReviewsItem';
 import { ReviewsList } from 'components/ReviewsList/ReviewsList';
-
 export default function Reviews() {
   const { movieId } = useParams();
   const [rewData, setRewData] = useState(null);
@@ -30,13 +30,13 @@ export default function Reviews() {
   return (
     <>
       {rewData.length > 0 ? (
-        <ul>
+        <ReviewsList>
           {rewData.map(({ id, author, content }) => {
             return (
-              <ReviewsList key={id} authorName={author} rewContent={content} />
+              <ReviewsItem key={id} authorName={author} rewContent={content} />
             );
           })}
-        </ul>
+        </ReviewsList>
       ) : (
         <div> We don't have any reviews for this movie</div>
       )}

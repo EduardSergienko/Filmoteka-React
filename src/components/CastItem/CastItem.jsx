@@ -10,8 +10,12 @@ export function CastItem({ actorName, character, actorPhoto }) {
     <li className={styles.profile}>
       <img className={styles.profileImg} src={src} alt="" />
       <div className={styles.profileInfo}>
-        <p> Actor: {actorName}</p>
-        <p> Character: {character}</p>
+        <p className={styles.profileTitle}>
+          Actor: <span className={styles.profileText}>{actorName}</span>
+        </p>
+        <p className={styles.profileTitle}>
+          Character: <span className={styles.profileText}>{character}</span>
+        </p>
       </div>
     </li>
   );

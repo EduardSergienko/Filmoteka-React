@@ -18,7 +18,7 @@ export default function Home() {
         const { data } = await fetchTrandingFilms(page);
         const { data: result } = await getMovieGenres();
         setMoviesData(prewState => [...prewState, ...data.results]);
-        console.log(data);
+
         setGenres(result.genres);
       } catch (error) {}
     }
