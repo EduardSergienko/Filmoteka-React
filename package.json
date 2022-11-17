@@ -1,7 +1,8 @@
 {
   "name": "react-homework-template",
+  "homepage": "https://EduardSergienko.github.io/Filmoteka-React/",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "@emotion/react": "^11.10.0",
     "@emotion/styled": "^11.10.0",
@@ -26,7 +27,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint:js": "eslint src/**/*.{js,jsx}"
+    "lint:js": "eslint src/**/*.{js,jsx}",
+    "deploy": "netlify deploy -p",
+    "predeploy": "npm run build"
   },
   "eslintConfig": {
     "extends": [
