@@ -25,7 +25,7 @@ export function MovieInfo({
         <img className={styles.movieInfoPoster} src={src} alt="" />
       </div>
       <div className={styles.movieAbout}>
-        <h2>{movieTitle}</h2>
+        <h2 className={styles.movieTitle}>{movieTitle}</h2>
         <p className={styles.overview}>
           Country:{'  '}
           <span className={styles.additionalOverview}>{movieCountry}</span>

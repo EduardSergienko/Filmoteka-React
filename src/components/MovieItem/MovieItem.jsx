@@ -19,10 +19,12 @@ export const MovieItem = ({
     >
       <li className={styles.item}>
         <img className={styles.poster} src={src} alt="" />
-        <p className={styles.title}>{filmTitle}</p>
-        <p className={styles.release}>
-          {movieDate} | {genres}
-        </p>
+        <div className={styles.itemInfoWrap}>
+          <p className={styles.title}>{filmTitle}</p>
+          <p className={styles.release}>
+            {movieDate} | {genres}
+          </p>
+        </div>
       </li>
     </Link>
   );

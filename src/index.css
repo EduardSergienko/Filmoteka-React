@@ -1,26 +1,27 @@
-@import-normalize; /* bring in normalize.css styles */
+/* @import-normalize; bring in normalize.css styles */
+@import '/node_modules/modern-normalize/modern-normalize.css';
 
 body {
-  margin: 0;
   font-family: Roboto, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: normal;
+  background-color: #2b2b2b;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-ul{
+ul {
   padding: 0;
   margin: 0;
   list-style: none;
 }
-img{
+img {
   display: block;
 }
-p{
+p {
   margin: 0;
   color: #3a3939;
 }

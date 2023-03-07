@@ -31,6 +31,8 @@ export function SearchBar({ onSubmit, value }) {
         onChange={handleInputType}
         sx={{
           width: 300,
+          color: '#fff',
+          outline: '#fff',
         }}
       />
       <Button

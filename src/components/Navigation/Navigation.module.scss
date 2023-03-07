@@ -3,10 +3,11 @@
 }
 
 .navitem {
-  color: black;
+  color: #fff;
   text-decoration: none;
   font-weight: 600;
   margin-right: 10px;
+  letter-spacing: 0.2em;
   &:last-child {
     margin-right: 0;
   }
@@ -15,6 +16,7 @@
   text-decoration: none;
   font-weight: 600;
   margin-right: 10px;
+  letter-spacing: 0.2em;
   &:last-child {
     margin-right: 0;
   }

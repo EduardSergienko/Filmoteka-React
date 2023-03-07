@@ -26,8 +26,8 @@ export default function Home() {
     showTrandingFilms();
   }, [page]);
   function cutFilmTitle(title) {
-    if (title.length > 30) {
-      return title.slice(0, 30) + '...';
+    if (title.length > 24) {
+      return title.slice(0, 24) + '...';
     } else {
       return title;
     }

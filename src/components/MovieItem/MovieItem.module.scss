@@ -15,13 +15,20 @@
 .poster {
   width: 250px;
   height: 350px;
-  margin-bottom: 5px;
+}
+.itemInfoWrap {
+  padding: 10px 20px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background-color: #3b3b3b;
 }
 .title {
+  color: #fff;
   font-weight: 500;
   margin-bottom: 5px;
 }
 .release {
+  color: #68dbe1f0;
   font-weight: 500;
-  font-size: 10px;
+  font-size: 12px;
 }
